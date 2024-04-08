@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - My CMS</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      article {
+        flex: 1;
+        min-width: 250px; /* Minimum width of each card */
+        max-width: 300px; /* Maximum width of each card */
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      article:hover {
+        transform: translateY(+10px); /* Slightly raise the card on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increase shadow for 3D effect */
+      }
+
+      article h2 {
+        margin: 0 0 10px; /* Adjust title margin */
+      }
+
+      article img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px; /* Add some space below the image */
+      }
+
+      article div {
+        text-align: justify;
+      }
+      /* Additional Global Styles */
+      body,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Header Styles */
+      header {
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: #444;
+        overflow: hidden;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Nav (Sidebar?) Styles */
+      nav {
+        background: #eee;
+        padding: 20px;
+        height: auto; /* This assumes a full-height sidebar */
+      }
+
+      /* Footer Styles */
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Utility Classes for Text */
+      .text-center {
+        text-align: center;
+      }
+
+      .text-justify {
+        text-align: justify;
+      }
+
+      /* Responsive Flexbox for Navbar */
+      @media screen and (max-width: 768px) {
+        .navbar a {
+          float: none;
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+     <%- include('partials/navbar') %>
+      <%-include('partials/nav') %>
+
+    <main>
+      <% if (pages && pages.length > 0) { %> <% pages.forEach(function(page) {
+      %>
+      <article>
+        <h2><%= page.title %></h2>
+        <% if (page.image) { %>
+        <img
+          src="<%= page.image.replace('public\\', '/') %>"
+          alt="<%= page.title %>"
+          style="max-width: 100px; height: auto"
+        />
+        <% } %>
+        <div><%= page.content %></div>
+      </article>
+      <% }); %> <% } else { %>
+      <p>No pages to display.</p>
+      <% } %>
+    </main>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

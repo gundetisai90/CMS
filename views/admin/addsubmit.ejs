@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: #f7f7f7;
+        }
+        .header, .footer {
+            width: 100%;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar {
+            width: 100%;
+            padding: 10px 20px;
+            background: #eee;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 1px solid #333;
+        }
+        .content {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <%- include('../partials/header') %>
+        <a href="/admin/pages/new">Add page</a>
+        <a href="/admin/dashboard">Edit pages</a>
+        <a href="/admin/logout">Logout</a>
+    </div>
+    <div class="content">
+        <h1>Add New Page</h1>
+        <p>You have successfully created a new page!</p>
+    </div>
+    <div class="footer">
+        © Copyright 2020. Conestoga College.
+    </div>
+</body>
+</html>

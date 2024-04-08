@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+        <% pages.forEach(function(page) { %>
+            <li><a href="/page/<%= page.slug %>"><%= page.title %></a></li>
+        <% }); %>
+    </ul>
+</nav>

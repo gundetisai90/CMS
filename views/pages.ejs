@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<main>
+    <% if (page) { %>
+        <article>
+            <h2><%= page.title %></h2>
+            <% if (page.image) { %>
+                <img src="../page.image %>" alt="<%= page.title %>">
+            <% } %>
+            <div><%= page.content %></div>
+        </article>
+    <% } else { %>
+        <p>Page not found.</p>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>

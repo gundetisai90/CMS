@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Admin Dashboard</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #eee;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .navbar {
+        display: flex;
+        justify-content: flex-start;
+
+      }
+      .navbar a {
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 5px 10px;
+        border: 1px solid #000;
+        color: #000;
+      }
+      .welcome-text {
+        margin-left: 20px;
+        flex-grow: 1;
+        text-align: right;
+      }
+      main {
+        flex-grow: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      
+      <div class="navbar">
+        <%- include('../partials/header') %>
+        <a href="/admin/pages/new">Add page</a>
+        <a href="/admin/dashboard">Edit pages</a>
+        <a href="/admin/logout">Logout</a>
+      </div>
+      <div class="welcome-text">Welcome Admin!</div>
+    </header>
+
+    <main>
+      <h2>Welcome</h2>
+      <p>Hello Admin, welcome to the dashboard!</p>
+    </main>
+
+    <div class="footer">© Copyright 2020. Conestoga College.</div>
+  </body>
+</html>
